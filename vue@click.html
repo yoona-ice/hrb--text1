@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.box{
+    width:100px;
+    height:100px;
+    background: yellowgreen;
+}
+</style>
+<body>
+    <div id="app" >
+   
+       <div class='box' @click='handleMenu()' ></div>     
+       <input type='text'  @keyPress.enter='car($event)'>
+    </div>   
+</body>
+</html>
+<script src='vue.js'></script>
+<script>
+    let app=new Vue({
+        el:'#app',
+        data:{
+
+        },
+          
+     methods:{
+    
+      handleMenu(){
+       console.log(111)
+      },
+      car(e){
+          alert(e.target.value)
+      }
+     }
+    })
+    
+    </script>

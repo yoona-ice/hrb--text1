@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel='stylesheet' href='./swiper.css'>
+</head>
+<body>
+    <div id="app" >
+     {{message}}
+     <hr>
+     <div class="swiper-container" ref="swiperContainer">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for='item in banners'>
+              <img :src='item' >
+            </div>
+          
+        </div>
+       </div>
+        </div>   
+</body>
+</html>
+<script src='./swiper.js'></script>
+<script src='../vue.js'></script>
+<script>
+    let app=new Vue({
+        el:'#app',
+        data:{
+        message:1914,
+        banners:['https://z2.tuanimg.com/imagev2/site/951x304.e201b0a675c13b8b3e4897dfcde92191.951x304+1-1.951x304.jpg',
+        'https://z2.tuanimg.com/imagev2/site/950x304.c28eb5769b222607eda79c601356d93e.951x304+1-1.951x304.jpg',
+        'https://z2.tuanimg.com/imagev2/site/950x304.c124688f717c1574fb156d3c96a095e9.951x304+1-1.951x304.jpg']
+        },
+
+    beforeCreate(){
+        console.log('beforeCreate')
+    },
+    created(){
+       // this.message=2008,
+       // console.log('created')
+        setTimeout(()=>{
+         this.banners=[]
+        },2000)
+    },
+    beforeMount(){
+        console.log('beforeMount')
+      
+    },
+    mounted(){
+        console.log('mounted')
+        new Swiper(this.$refs.swiperContainer,{
+        loop: true,  
+        autoplay:true,
+        })
+    },
+    beforeUpdate(){
+
+    },
+    updated(){
+        // new Swiper(this.$refs.swiperContainer,{
+        // loop: true,  
+        // autoplay:true,
+        // })
+    }
+      
+})
+
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" >
+        <input type='text' v-model='message' >
+         <p>{{message}}</p>
+        <hr/>
+       <label>
+           男:<input type='radio' value='男' v-model='val'>
+           </label>
+           <label>
+                女:<input type='radio' value='女' v-model='val'>
+                </label>
+             <p>您选择的性别是:{{val}}</p>
+             <hr>
+             
+             <label>
+                    吃饭饭:<input type='checkbox' value='吃饭饭' v-model='checkVal'>
+             </label>
+             <label>
+                    打豆豆:<input type='checkbox' value='喝牛奶' v-model='checkVal'>
+             </label>
+
+             <label>
+                    睡觉觉:<input type='checkbox' value='睡觉觉' v-model='checkVal'>
+             </label>
+
+             <label>
+                    聊天天:<input type='checkbox' value='聊天天' v-model='checkVal'>
+             </label>
+         <ul>
+             您的爱好为:
+             <li v-for='item in checkVal'>{{item}}</li>
+             </ul>
+             <hr>
+            <select v-model='opoVal'>
+                 <option value='2001' >2001</option>
+                 <option value='2002' >2002</option>
+                 <option value='2003' >2003</option>
+                </select>
+                <p>小玩意出生日期为:{{opoVal}}</p>
+            
+
+</body>
+</html>
+<script src='vue.js'></script>
+<script>
+    let app=new Vue({
+        el:'#app',
+        data:{
+      message:'happpy',
+      val:'男',
+      checkVal:[],
+      opoVal:2002
+
+        }
+        
+    })
+    
+    </script>
