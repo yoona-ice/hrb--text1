@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="app" >
+                 
+             <label>
+                    吃饭饭:<input type='checkbox' value='吃饭饭' @click='change($event)'>
+             </label>
+             <label>
+                    打豆豆:<input type='checkbox' value='打豆豆' @click='change($event)' >
+             </label>
+
+             <label>
+                    睡觉觉:<input type='checkbox' value='睡觉觉' @click='change($event)' >
+             </label>
+
+             <label>
+                    聊天天:<input type='checkbox' value='聊天天' @click='change($event)' >
+             </label>
+         <ul>
+             您的爱好为:
+             <li v-for='item in message'>{{item}}</li>
+                      </div> 
+</body>
+</html>
+<script src='vue.js'></script>
+<script>
+    let app=new Vue({
+        el:'#app',
+        data:{
+            message:[],
+        },
+        methods:{
+         change(e){
+           let val= e.target.value;
+          // this.message.push(val)
+          let arr=this.message;
+         var flag=arr.includes(val)
+         if(flag){
+             var index=arr.indexOf(val);
+             arr.splice(index,1);
+         }else{
+             arr.push(val)
+         }
+         this.message=arr;
+         }
+        }
+    })
+    
+    </script>

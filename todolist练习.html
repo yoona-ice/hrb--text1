@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    li{list-style: none;}
+    </style>
+<body>
+        <div id="app" >
+          新闻标题:<input type='text' v-model='title'><br/>
+          新闻地址:<input type='text' v-model='url'> <br/>
+          新闻类别:
+          <select v-model='type'>
+              <option>科技</option>
+              <option>娱乐</option>
+              <option>财经</option>
+          </select><br/> 
+          是否标红:
+          <label>
+                <input type='radio' value='是' v-model='red'>是
+                <input type='radio' value='否' v-model='red'>否
+          </label> <br/>   
+          <button @click='submit()'>提交</button>
+          <hr>
+          <button @click='submit()'>科技</button>
+          <button @click='submit()'>娱乐</button>
+          <button @click='submit()'>财经</button>
+          <ul>
+        <li v-for='item in list'>{{item}}</li>
+          </ul>
+          
+        </div> 
+</body>
+</html>
+<script src='vue.js'></script>
+<script>
+    let app=new Vue({
+        el:'#app',
+        data:{
+            title:'',
+            url:'',
+            type:'科技',
+            red:'',
+            list:[],
+        
+        },
+        methods:{
+         submit(){
+            this.list.push(this.title)
+         }
+        }
+    })
+    
+    </script>
+

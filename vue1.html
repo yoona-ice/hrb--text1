@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+   <div id="app" >
+ <div v-for='item in arr'>{{item}}
+       </div> 
+</body>
+
+</html>
+<script src='vue.js'></script>
+<script>
+    let app=new Vue({
+        el:'#app',
+        data:{
+     arr:['英雄联盟','反恐精英','炫舞']
+
+        }
+    })
+    
+    </script>
